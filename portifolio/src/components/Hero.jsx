@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Contact from './contact';
 import Projects from './Projects';
 import Experience from './Experience';
+import Achievements from './Achievements';
 function Hero() {
   const [showTech, setShowTech] = useState(false);
   const [project, setProject] = useState(false);
@@ -58,8 +59,16 @@ function Hero() {
             >
               Skills
             </button>
+            <a
+               href="/Siddhardha_Vemulamada_Resume.pdf"
+  
+                rel="noopener noreferrer"
+                className="px-7 py-3.5 rounded-xl border font-semibold transition-all text-decoration-none shadow-sm border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50"
+               >
+               View Resume
+             </a>
           </div>
-
+             
           <AnimatePresence>
             {showTech && (
               <motion.div 
@@ -113,7 +122,10 @@ function Hero() {
       <div>
         <Experience />
       </div>
-
+{/* Achievements */}
+  <div>
+     <Achievements />
+  </div>
 
 {/* Contact Me  */}
        <div className="">

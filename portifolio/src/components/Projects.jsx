@@ -97,6 +97,7 @@ function Projects({name}) {
                     ))}
                 </motion.div>
             </div>
+          
         </section>
     );
 }
