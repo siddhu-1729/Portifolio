@@ -63,7 +63,7 @@ function Hero() {
                href="/Siddhardha_Vemulamada_Resume.pdf"
   
                 rel="noopener noreferrer"
-                className="px-7 py-3.5 rounded-xl border font-semibold transition-all text-decoration-none shadow-sm border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50"
+                className="px-7 py-3.5 rounded-xl border font-semibold transition-all text-decoration-none shadow-sm border-blue-600 text-blue-600 hover:bg-blue-50"
                >
                View Resume
              </a>
