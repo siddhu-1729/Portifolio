@@ -18,14 +18,13 @@ function Contact() {
     e.preventDefault();
     console.log(form); 
     // later connect to backend
-    await fetch("http://localhost:5000/contact",{
+    await fetch(`${import.meta.env.VITE_BACKEND_URL}/contact`,{
         method:"POST",
         headers:{
             "Content-type":"application/json",
         },
       body:JSON.stringify(form),
     });
-    e.preventDefault();
   };
 
   return (
