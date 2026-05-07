@@ -11,7 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 const transporter=nodemailer.createTransport({
-    service:"gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth:{
         user:process.env.EMAIL_USER,
         pass:process.env.EMAIL_PASS,
@@ -36,5 +38,6 @@ app.post("/contact", async (req, res) => {
     res.status(500).json({ success: false });
   }
 });
+const PORT=process.env.PORT || 5000;
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
