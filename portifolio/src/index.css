@@ -46,7 +46,12 @@
 
   --code-bg: #1e293b;
 }
-
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
@@ -65,10 +70,6 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
-}
-
-body {
-  margin: 0;
 }
 
 #root {
