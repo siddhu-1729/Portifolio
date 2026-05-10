@@ -1,6 +1,10 @@
 import profileImg from '../assets/me.jpg';
 import { useState, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+// context API
+import { theme } from '../context/ThemeContext.jsx'
+
 import Contact from './contact';
 import Projects from './Projects';
 import Experience from './Experience';
@@ -8,6 +12,8 @@ import Achievements from './Achievements';
 function Hero() {
   const [showTech, setShowTech] = useState(false);
   const [project, setProject] = useState(false);
+
+  const{darkMode,toggleTheme} = useContext(theme);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -31,10 +37,15 @@ function Hero() {
 
   return (
     <>
-      <section className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 min-h-svh px-6 md:px-12 py-20 relative overflow-hidden text-left sm:text-center md:text-left">
+      <section className={`flex flex-col-reverse md:flex-row items-center justify-between gap-12 min-h-svh px-6 md:px-12 py-20 relative overflow-hidden text-left sm:text-center md:text-left`}>
         <div className="flex-1 max-w-[600px] animate-fade-slide-up">
+          <div className="flex flex-row gap-2">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-(--accent-bg) border border-(--accent-border) text-(--accent) text-sm font-medium mb-6 animate-fade-slide-down">
             👋 Available for work
+          </div>
+            <button onClick={toggleTheme} className="px-4 py-1.5 rounded-full bg-white dark:bg-white border border-(--accent-border) text-(--accent) text-sm font-medium mb-6 animate-fade-slide-down cursor-pointer">
+              {darkMode ? 'Back' : 'Toggle'}
+            </button>
           </div>
           <h1 className="text-[clamp(36px,5vw,64px)] font-bold tracking-tight leading-[1.1] mb-5 text-(--text-h)">
             Hi, I'm <span className="bg-linear-to-br from-(--accent) to-[#7c3aed] bg-clip-text text-transparent">Venkata Siddhardha</span>
@@ -63,7 +74,7 @@ function Hero() {
                href="/Siddhardha_Vemulamada_Resume.pdf"
   
                 rel="noopener noreferrer"
-                className="px-7 py-3.5 rounded-xl border font-semibold transition-all text-decoration-none shadow-sm border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50"
+                className="px-7 py-3.5 rounded-xl border font-semibold transition-all text-decoration-none shadow-sm border-blue-600 text-blue-600 hover:bg-blue-50"
                >
                View Resume
              </a>
@@ -131,7 +142,6 @@ function Hero() {
        <div className="">
          <Contact />
       </div>
-
     </>
   );
 }
